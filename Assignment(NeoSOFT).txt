@@ -1,0 +1,89 @@
+Q1. What is the Difference between Server Side Rendering and Client Side Rendering?
+
+Ans>
+
+Server Side Rendering:
+
+1> The whole HTML,CSS and JS file are rendered on the server side and send as an HTML doc to the client.
+2> It is recommended where User Interactivitiy is less i.e. less dynamic pages.
+3> Intial load time is less.
+4> Used where SEO Is an important aspect. Allows the bots and the crawlers to go through the JS files.
+5> When the request is made the whole page is refreshed.
+
+Client Side Rendering:
+
+1> The skeleton HTML is send from the Server with JS files which is rendered on the client.
+2> It is recommended where User Interactivitiy is more i.e. more dynamic pages.
+3> Intial load time is more.
+4> Used where SEO Is not an important aspect. The JS file are invisible to the bot and the Crawlers.
+5> When the request is made only the component changed is re-rendered.
+
+Q2. What is difference between TCP/IP and HTTP?
+
+Ans>
+
+TCP is relatively slower. TCP tells the destination computer which application should receive data and ensures the proper delivery of said data, whereas HTTP is used to search and find the desired documents on the Internet.TCP/IP Resides on the Transport layer whereas the HTTP lies in the Application layer of the OSI Model. HTTP Require TCP/IP connectivity to be established.
+
+Q3. What is Serialisation and Deserialistaion?
+
+Ans>
+
+Serialization is the process of converting a data object—a combination of code and data represented within a region of data storage—into a series of bytes that saves the state of the object in an easily transmittable form. In this serialized form, the data can be delivered to another data store (such as an in-memory computing platform), application, or some other destination.To make a Java object serializable we implement the java.io.Serializable interface. The ObjectOutputStream class contains writeObject() method for serializing an Object. 
+
+The reverse process—constructing a data structure or object from a series of bytes—is deserialization. The deserialization process recreates the object, thus making the data easier to read and modify as a native structure in a programming language.The ObjectInputStream class contains readObject() method for deserializing an object. 
+
+The byte stream created is platform independent. So, the object serialized on one platform can be deserialized on a different platform.
+
+Q5. Write a query in JPQL using wildcard Characters?
+
+Ans>
+
+For finding Cat containing a Particular Name:
+
+@Query("FROM Cat d WHERE d.name LIKE %:name%")
+List<Cat> findByNameLike(@Param("name") String name);
+
+For finding the Cat object not containing a particular name:
+
+@Query("FROM Cat d WHERE d.name NOT LIKE %:name%")
+List<Cat> findByNameNotLike(@Param("name") String name);
+
+For finding the Cat object starting with a particular name:
+
+@Query("FROM Cat d WHERE d.name LIKE :name%")
+List<Cat> findByNameStartsWith(@Param("name") String name);
+
+For finding the Cat object Ending with a particular name:
+
+@Query("FROM Cat d WHERE d.name LIKE %:name")
+List<Cat> findByNameEndsWith(@Param("name") String name);
+
+Q6. What is the difference between Encryption/Decryption and Encoding/Decoding?
+
+Ans>
+
+The basic difference between the both is that Encryption/Decryption require a secret key along with the algorithm for it to work while Encoding/Decoding requires the usage of the algorithm.
+
+Q7. What is SHA-256?
+
+Ans>
+
+SHA 256 is a part of the SHA 2 family of algorithms, where SHA stands for Secure Hash Algorithm.The significance of the 256 in the name stands for the final hash digest value, i.e. irrespective of the size of plaintext/cleartext, the hash value will always be 256 bits.
+
+Some of the standout features of the SHA algorithm are as follows:
+
+    1> Message Length: The length of the cleartext should be less than 264 bits. The size needs to be in the comparison area to keep the digest as random as possible.
+
+    2> Digest Length: The length of the hash digest should be 256 bits in SHA 256 algorithm, 512 bits in SHA-512, and so on. Bigger digests usually suggest significantly more calculations at the cost of speed and space.
+
+    3> Irreversible: By design, all hash functions such as the SHA 256 are irreversible. You should neither get a plaintext when you have the digest beforehand nor should the digest provide its original value when you pass it through the hash function again.
+
+
+Q8. What is the difference between Library and Framework?
+
+Ans>
+Libraries provide developers with predefined functions and classes to make their work easier and boost the development process. Framework, on the other hand, is like the foundation upon which developers build applications for specific platforms.
+
+The technical difference between a framework and library lies in a term called inversion of control.
+When you use a library, you are in charge of the flow of the application. You are choosing when and where to call the library. When you use a framework, the framework is in charge of the flow. It provides some places for you to plug in your code, but it calls the code you plugged in as needed.
+
